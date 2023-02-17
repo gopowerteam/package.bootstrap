@@ -1,0 +1,27 @@
+{
+  "name": "bootstrap-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "tsup"
+  },
+  "bin": {
+    "bootstrap": "./dist/index.js"
+  },
+  "dependencies": {
+    "bootstrap-editorconfig": "workspace:*",
+    "chalk": "^5.2.0",
+    "commander": "^10.0.0",
+    "gradient-string": "^2.0.2",
+    "shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "tsconfig": "workspace:*",
+    "tsup": "^6.6.3"
+  }
+}

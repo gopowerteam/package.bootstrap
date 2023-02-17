@@ -1,0 +1,19 @@
+{
+  "name": "package.bootstrap",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "lerna run build",
+    "dev": "lerna watch -- lerna run build --scope=$LERNA_PACKAGE_NAME",
+    "exec": "node scripts/exec.js",
+    "lint": "lerna run lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^6.5.1"
+  }
+}
