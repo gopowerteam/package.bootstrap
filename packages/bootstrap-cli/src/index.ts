@@ -1,4 +1,4 @@
-#!/bin/env node
+#!/usr/bin/env node
 
 import supportModules from "./modules";
 import { createQuestion } from "./shared/question";
