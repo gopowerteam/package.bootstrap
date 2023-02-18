@@ -54,7 +54,9 @@ jobs:
           git config --global user.name "zhuchentong"
 
       - name: Set NPM TOKEN
-        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+        run: |
+          git update-index --skip-worktree -- .npmrc
+          pnpm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
