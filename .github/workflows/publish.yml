@@ -5,6 +5,7 @@ on:
       - release/patch
       - release/minor
       - release/major
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -53,7 +54,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-    - name: Publish Package Minor
+      - name: Publish Package Minor
         run: npm run publish:minor
         if: ${{ github.ref_name == 'release/minor' }}
         env:
