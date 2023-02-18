@@ -1,6 +1,6 @@
 {
   "name": "@gopowerteam/bootstrap-cli",
-  "version": "0.0.2",
+  "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "keywords": [],
@@ -29,5 +29,7 @@
     "prettier": "^2.8.4",
     "tsup": "^6.6.3"
   },
-  "gitHead": "cdc19a8694115127e4f8db574564995e13f250a6"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  }
 }
