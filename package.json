@@ -6,9 +6,12 @@
   "main": "index.js",
   "scripts": {
     "build": "lerna run build",
+    "test": "lerna run test",
     "dev": "lerna watch -- lerna run build --scope=$LERNA_PACKAGE_NAME",
     "exec": "node scripts/exec.js",
-    "lint": "lerna run lint"
+    "lint": "lerna run lint",
+    "publish": "lerna publish patch --no-private --yes",
+    "release": "npm run build && npm run publish"
   },
   "keywords": [],
   "author": "",
