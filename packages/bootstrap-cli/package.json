@@ -28,5 +28,6 @@
     "@types/prompts": "^2.4.2",
     "prettier": "^2.8.4",
     "tsup": "^6.6.3"
-  }
+  },
+  "gitHead": "cdc19a8694115127e4f8db574564995e13f250a6"
 }
