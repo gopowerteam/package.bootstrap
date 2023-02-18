@@ -48,6 +48,11 @@ jobs:
       - name: Test Package
         run: pnpm test
 
+      - name: Configure Git User
+        run: |
+          git config --global user.email "2037630@163.com"
+          git config --global user.name "zhuchentong"
+
       - name: Publish Package Patch
         run: npm run publish:patch
         if: ${{ github.ref_name == 'release/patch' }}
