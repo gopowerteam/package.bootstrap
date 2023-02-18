@@ -4,9 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git-cz"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "commitlint": { "extends": ["@commitlint/config-conventional"] },
+  "config": { "commitizen": { "path": "node_modules/cz-customizable" } },
+  "devDependencies": {
+    "@commitlint/cli": "17.4.2",
+    "@commitlint/config-conventional": "17.4.2",
+    "commitizen": "4.3.0",
+    "cz-customizable": "7.0.0"
+  }
 }

@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "commit": "git-cz"
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.4.2",
+    "@commitlint/config-conventional": "17.4.2",
+    "commitizen": "4.3.0",
+    "cz-customizable": "7.0.0"
+  }
+}

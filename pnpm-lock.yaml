@@ -14,54 +14,25 @@ importers:
   packages/bootstrap-cli:
     specifiers:
       '@types/node': ^18.13.0
-      bootstrap-editorconfig: workspace:*
+      '@types/prettier': ^2.7.2
+      '@types/prompts': ^2.4.2
       chalk: ^5.2.0
       commander: ^10.0.0
       gradient-string: ^2.0.2
-      shared: workspace:*
-      tsconfig: workspace:*
+      prettier: ^2.8.4
+      prompts: ^2.4.2
       tsup: ^6.6.3
     dependencies:
-      bootstrap-editorconfig: link:../bootstrap-editorconfig
       chalk: 5.2.0
       commander: 10.0.0
       gradient-string: 2.0.2
-      shared: link:../shared
-    devDependencies:
-      '@types/node': 18.13.0
-      tsconfig: link:../tsconfig
-      tsup: 6.6.3
-
-  packages/bootstrap-editorconfig:
-    specifiers:
-      '@types/node': ^18.13.0
-      shared: workspace:*
-      tsconfig: workspace:*
-      tsup: ^6.6.3
-    dependencies:
-      shared: link:../shared
-    devDependencies:
-      '@types/node': 18.13.0
-      tsconfig: link:../tsconfig
-      tsup: 6.6.3
-
-  packages/shared:
-    specifiers:
-      '@types/node': ^18.13.0
-      '@types/prompts': ^2.4.2
-      prompts: ^2.4.2
-      tsconfig: workspace:*
-      tsup: ^6.6.3
-    dependencies:
       prompts: 2.4.2
     devDependencies:
       '@types/node': 18.13.0
+      '@types/prettier': 2.7.2
       '@types/prompts': 2.4.2
-      tsconfig: link:../tsconfig
+      prettier: 2.8.4
       tsup: 6.6.3
-
-  packages/tsconfig:
-    specifiers: {}
 
 packages:
 
@@ -794,6 +765,10 @@ packages:
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
+    dev: true
+
+  /@types/prettier/2.7.2:
+    resolution: {integrity: sha512-KufADq8uQqo1pYKVIYzfKbJfBAc0sOeXqGbFaSpv8MRmC/zXgowNZmFcbngndGk922QDmOASEXUZCaY48gs4cg==}
     dev: true
 
   /@types/prompts/2.4.2:
@@ -3432,6 +3407,12 @@ packages:
     dependencies:
       lilconfig: 2.0.6
       yaml: 1.10.2
+    dev: true
+
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /proc-log/2.0.1:
