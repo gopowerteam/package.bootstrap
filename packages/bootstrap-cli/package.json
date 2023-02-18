@@ -30,6 +30,8 @@
     "tsup": "^6.6.3"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  }
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "gitHead": "cf586cdb77108871f57d01c7efffc58b81cc30ee"
 }
