@@ -53,10 +53,10 @@ jobs:
           git config --global user.email "2037630@163.com"
           git config --global user.name "zhuchentong"
 
-      - name: Authenticate with Registry
-        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+      - name: Set NPM TOKEN
+        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: Publish Package Patch
         run: npm run publish:patch
