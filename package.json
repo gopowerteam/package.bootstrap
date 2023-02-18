@@ -10,8 +10,10 @@
     "dev": "lerna watch -- lerna run build --scope=$LERNA_PACKAGE_NAME",
     "exec": "node scripts/exec.js",
     "lint": "lerna run lint",
-    "publish": "lerna publish patch --no-private --yes",
-    "release": "npm run build && npm run publish"
+    "publish:patch": "lerna publish patch --no-private --yes",
+    "publish:minor": "lerna publish minor --no-private --yes",
+    "publish:major": "lerna publish major --no-private --yes",
+    "release": "npm run build && npm run publish:patch"
   },
   "keywords": [],
   "author": "",

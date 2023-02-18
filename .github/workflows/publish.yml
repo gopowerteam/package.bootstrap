@@ -2,7 +2,9 @@ name: publish
 on:
   push:
     branches:
-      - release
+      - release/patch
+      - release/minor
+      - release/major
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,15 +41,26 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Authenticate with Registry
-        run: |
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+      - name: Build Package
+        run: pnpm build
+
+      - name: Test Package
+        run: pnpm test
+
+      - name: Publish Package Patch
+        run: npm run publish:patch
+        if: ${{ github.ref_name == 'release/patch' }}
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish package
-        run: lerna publish --yes --message 'chore: release new versions'
+    - name: Publish Package Minor
+        run: npm run publish:minor
+        if: ${{ github.ref_name == 'release/minor' }}
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_PAT }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish Package Major
+        run: npm run publish:major
+        if: ${{ github.ref_name == 'release/major' }}
+        env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
