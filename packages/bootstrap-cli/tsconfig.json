@@ -22,5 +22,5 @@
     "lib": ["ESNext.Array"]
   },
   "include": ["src"],
-  "exclude": ["dist", "build", "node_modules"]
+  "exclude": ["dist", "build", "node_modules", "templates"]
 }

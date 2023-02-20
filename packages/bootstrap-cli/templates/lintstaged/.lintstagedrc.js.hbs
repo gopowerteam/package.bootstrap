@@ -1,0 +1,8 @@
+module.exports = {
+  "**/*.{ts,tsx}": ["eslint --cache --fix"],
+  "**/*.{js,jsx}": ["eslint --cache --fix"],
+  {{#if stylelint}}
+  "**/*.{css,less,scss}": ["stylelint --cache --fix"],
+  {{/if}}
+  "**/*.vue": ["eslint --cache --fix"],
+};
