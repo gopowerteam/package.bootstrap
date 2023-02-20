@@ -5,25 +5,34 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "lint:eslint": "eslint \"src/**/*.{vue,ts,tsx}\" --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
-    }
-  },
+  "commitlint": { "extends": ["@commitlint/config-conventional"] },
+  "config": { "commitizen": { "path": "node_modules/cz-customizable" } },
   "devDependencies": {
     "@commitlint/cli": "17.4.2",
     "@commitlint/config-conventional": "17.4.2",
     "commitizen": "4.3.0",
-    "cz-customizable": "7.0.0"
+    "cz-customizable": "7.0.0",
+    "@gopowerteam/eslint-config": "latest",
+    "husky": "8.0.2",
+    "lint-staged": "13.1.0",
+    "stylelint": "14.16.1",
+    "stylelint-config-html": "1.1.0",
+    "stylelint-config-prettier": "9.0.4",
+    "stylelint-config-recess-order": "3.1.0",
+    "stylelint-config-recommended": "9.0.0",
+    "stylelint-config-recommended-less": "1.0.4",
+    "stylelint-config-recommended-scss": "8.0.0",
+    "stylelint-config-recommended-vue": "1.4.0",
+    "stylelint-config-standard": "29.0.0",
+    "stylelint-config-standard-scss": "6.1.0",
+    "stylelint-less": "1.0.6",
+    "stylelint-order": "6.0.1",
+    "stylelint-prettier": "2.0.0"
   }
 }

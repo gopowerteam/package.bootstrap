@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "lint:eslint": "eslint \"src/**/*.{vue,ts,tsx}\" --fix"
+  },
+  "devDependencies": {
+    "@gopowerteam/eslint-config": "latest"
+  }
+}
