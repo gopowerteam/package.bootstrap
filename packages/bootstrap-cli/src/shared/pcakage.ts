@@ -12,6 +12,14 @@ function getPackageObject(
   if (complieParams) {
     packageContent = compile(packageContent, complieParams);
   }
+
+  try {
+    JSON.parse(packageContent);
+  } catch (ex) {
+    console.error(ex);
+    console.log(packageContent);
+  }
+
   const packageJSON = JSON.parse(packageContent);
 
   return packageJSON;

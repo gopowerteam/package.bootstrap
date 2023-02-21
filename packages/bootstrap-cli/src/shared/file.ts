@@ -17,11 +17,16 @@ function format(file: string, content: string) {
 
   switch (path.extname(file)) {
     case ".js":
-    case ".ts":
       parser = "babel";
+      break;
+    case ".ts":
+      parser = "babel-ts";
       break;
     case ".json":
       parser = "json";
+      break;
+    case ".yaml":
+      parser = "yaml";
       break;
   }
 

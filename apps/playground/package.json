@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "commit": "git-cz",
-    "lint:eslint": "eslint \"src/**/*.{vue,ts,tsx}\" --fix"
+    "lint:eslint": "eslint \"src/**/*.{vue,ts,tsx}\" --fix",
+    "format": "prettier --config ./.prettier/prettierrc-cli.js --write \"src/**/*.{ts,tsx,vue}\" \"test/**/*.{ts,tsx,vue}\""
   },
   "keywords": [],
   "author": "",
@@ -33,6 +34,8 @@
     "stylelint-config-standard-scss": "6.1.0",
     "stylelint-less": "1.0.6",
     "stylelint-order": "6.0.1",
-    "stylelint-prettier": "2.0.0"
+    "stylelint-prettier": "2.0.0",
+    "@prettier/plugin-pug": "2.4.1",
+    "prettier": "2.8.4"
   }
 }

@@ -13,10 +13,12 @@ importers:
       '@commitlint/cli': 17.4.2
       '@commitlint/config-conventional': 17.4.2
       '@gopowerteam/eslint-config': latest
+      '@prettier/plugin-pug': 2.4.1
       commitizen: 4.3.0
       cz-customizable: 7.0.0
       husky: 8.0.2
       lint-staged: 13.1.0
+      prettier: 2.8.4
       stylelint: 14.16.1
       stylelint-config-html: 1.1.0
       stylelint-config-prettier: 9.0.4
@@ -34,10 +36,12 @@ importers:
       '@commitlint/cli': 17.4.2
       '@commitlint/config-conventional': 17.4.2
       '@gopowerteam/eslint-config': 0.0.1
+      '@prettier/plugin-pug': 2.4.1_prettier@2.8.4
       commitizen: 4.3.0
       cz-customizable: 7.0.0
       husky: 8.0.2
       lint-staged: 13.1.0
+      prettier: 2.8.4
       stylelint: 14.16.1
       stylelint-config-html: 1.1.0_stylelint@14.16.1
       stylelint-config-prettier: 9.0.4_stylelint@14.16.1
@@ -50,7 +54,7 @@ importers:
       stylelint-config-standard-scss: 6.1.0_stylelint@14.16.1
       stylelint-less: 1.0.6_stylelint@14.16.1
       stylelint-order: 6.0.1_stylelint@14.16.1
-      stylelint-prettier: 2.0.0_stylelint@14.16.1
+      stylelint-prettier: 2.0.0_dolz6rwlo5u24hf4fhkbpcxlqi
 
   packages/bootstrap-cli:
     specifiers:
@@ -1083,6 +1087,16 @@ packages:
       typescript: 4.9.5
     dev: true
 
+  /@prettier/plugin-pug/2.4.1_prettier@2.8.4:
+    resolution: {integrity: sha512-TZqlSg1WunJs7n4sLf7JKoVxTTQP/oFFHXXvlgVrvf7M47rx7VmIOMFEBGHHhpCkEk5Ub8WnOsUOwb1IQanygQ==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
+    peerDependencies:
+      prettier: ^2.3.0
+    dependencies:
+      prettier: 2.8.4
+      pug-lexer: 5.0.1
+    dev: true
+
   /@tootallnate/once/2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
     engines: {node: '>= 10'}
@@ -1329,6 +1343,12 @@ packages:
   /acorn-walk/8.2.0:
     resolution: {integrity: sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==}
     engines: {node: '>=0.4.0'}
+    dev: true
+
+  /acorn/7.4.1:
+    resolution: {integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
     dev: true
 
   /acorn/8.8.2:
@@ -1766,6 +1786,12 @@ packages:
 
   /character-entities/1.2.4:
     resolution: {integrity: sha512-iBMyeEHxfVnIakwOuDXpVkc54HijNgCyQB2w0VfGQThle6NXn50zU6V/u+LDhxHcDUPojn6Kpga3PTAD8W1bQw==}
+    dev: true
+
+  /character-parser/2.2.0:
+    resolution: {integrity: sha512-+UqJQjFEFaTAs3bNsF2j2kEN1baG/zghZbdqoYEDxGZtJo9LBzl1A+m0D4n3qKx8N2FNv8/Xp6yV9mQmBuptaw==}
+    dependencies:
+      is-regex: 1.1.4
     dev: true
 
   /character-reference-invalid/1.1.4:
@@ -3771,6 +3797,13 @@ packages:
     hasBin: true
     dev: true
 
+  /is-expression/4.0.0:
+    resolution: {integrity: sha512-zMIXX63sxzG3XrkHkrAPvm/OVZVSCPNkwMHU8oTX7/U3AL78I0QXCEICXUM13BIa8TYGZ68PiTKfQz3yaTNr4A==}
+    dependencies:
+      acorn: 7.4.1
+      object-assign: 4.1.1
+    dev: true
+
   /is-extglob/2.1.1:
     resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==}
     engines: {node: '>=0.10.0'}
@@ -5544,6 +5577,18 @@ packages:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
     dev: true
 
+  /pug-error/2.0.0:
+    resolution: {integrity: sha512-sjiUsi9M4RAGHktC1drQfCr5C5eriu24Lfbt4s+7SykztEOwVZtbFk1RRq0tzLxcMxMYTBR+zMQaG07J/btayQ==}
+    dev: true
+
+  /pug-lexer/5.0.1:
+    resolution: {integrity: sha512-0I6C62+keXlZPZkOJeVam9aBLVP2EnbeDw3An+k0/QlqdwH6rv8284nko14Na7c0TtqtogfWXcRoFE4O4Ff20w==}
+    dependencies:
+      character-parser: 2.2.0
+      is-expression: 4.0.0
+      pug-error: 2.0.0
+    dev: true
+
   /punycode/2.3.0:
     resolution: {integrity: sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==}
     engines: {node: '>=6'}
@@ -6312,13 +6357,14 @@ packages:
       stylelint: 14.16.1
     dev: true
 
-  /stylelint-prettier/2.0.0_stylelint@14.16.1:
+  /stylelint-prettier/2.0.0_dolz6rwlo5u24hf4fhkbpcxlqi:
     resolution: {integrity: sha512-jvT3G+9lopkeB0ARmDPszyfaOnvnIF+30QCjZxyt7E6fynI1T9mOKgYDNb9bXX17M7PXMZaX3j/26wqakjp1tw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       prettier: '>=2.0.0'
       stylelint: '>=14.0.0'
     dependencies:
+      prettier: 2.8.4
       prettier-linter-helpers: 1.0.0
       stylelint: 14.16.1
     dev: true

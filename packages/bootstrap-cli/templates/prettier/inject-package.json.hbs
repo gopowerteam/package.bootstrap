@@ -1,0 +1,13 @@
+{
+  {{#if prettier-cli}}
+  "scripts": {
+     "format": "prettier --config ./.prettier/prettierrc-cli.js --write \"src/**/*.{ts,tsx,vue}\" \"test/**/*.{ts,tsx,vue}\""
+  },
+  {{/if}}
+  "devDependencies": {
+    {{#if prettier-pug}}
+    "@prettier/plugin-pug": "2.4.1",
+    {{/if}}
+    "prettier": "2.8.4"
+  }
+}

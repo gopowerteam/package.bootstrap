@@ -1,7 +1,6 @@
 module.exports = {
   extends: [
     'stylelint-config-standard',
-    'stylelint-config-prettier',
     'stylelint-config-html/vue',
     'stylelint-config-recommended-vue/scss',
     'stylelint-config-recommended-less',
@@ -41,10 +40,7 @@ module.exports = {
     'no-empty-source': null,
     'selector-class-pattern': null,
     'keyframes-name-pattern': null,
-    'selector-pseudo-class-no-unknown': [
-      true,
-      { ignorePseudoClasses: ['global', 'deep'] },
-    ],
+    'selector-pseudo-class-no-unknown': [true, { ignorePseudoClasses: ['global', 'deep'] }],
     'function-no-unknown': null,
     'order/properties-order': [
       'position',

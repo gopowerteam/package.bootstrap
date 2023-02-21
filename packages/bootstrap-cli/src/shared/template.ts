@@ -6,7 +6,7 @@ import { writeFile } from "./file";
 
 export function copyTemplate(
   module: string,
-  files: { input: string; output?: string; compileParams?: any }[] | string[]
+  files: ({ input: string; output?: string; compileParams?: any } | string)[]
 ) {
   files.forEach((file) => {
     const input = typeof file === "string" ? file : file.input;
