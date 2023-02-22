@@ -83,11 +83,6 @@ function sleep(time: number) {
   });
 }
 
-/**
- * Generate loading spinner with rocket flames!
- * @param text display text next to rocket
- * @returns Ora spinner for running .stop()
- */
 export async function showLoading(text: string) {
   const frames = getIntroAnimFrames();
   const loading = ora({
