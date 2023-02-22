@@ -30,6 +30,7 @@ const config = {
   path: {
     project: "",
     template: "",
+    cli: "",
   },
   prettier: prettierOptions,
 };
@@ -37,9 +38,11 @@ const config = {
 export function setupPath() {
   const projectPath = path.resolve(process.cwd());
   const templatePath = path.resolve(__dirname, "..", "templates");
+  const cliPath = path.resolve(__dirname, "..");
 
   config.path.project = projectPath;
   config.path.template = templatePath;
+  config.path.cli = cliPath;
 }
 
 export async function setupPrettier() {
