@@ -3,7 +3,7 @@ import fs from "node:fs";
 import config from "~/config";
 import { compile, writeFile } from "./file";
 
-function getPackageObject(
+export function getPackageObject(
   targetPath: string,
   complieParams?: Record<string, any>
 ) {
@@ -11,13 +11,6 @@ function getPackageObject(
 
   if (complieParams) {
     packageContent = compile(packageContent, complieParams);
-  }
-
-  try {
-    JSON.parse(packageContent);
-  } catch (ex) {
-    console.error(ex);
-    console.log(packageContent);
   }
 
   const packageJSON = JSON.parse(packageContent);
