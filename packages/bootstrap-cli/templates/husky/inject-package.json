@@ -1,4 +1,7 @@
 {
+  "scripts":{
+    "precommit": "chmod +x .husky/*"
+  },
   "devDependencies": {
     "husky": "8.0.2"
   }

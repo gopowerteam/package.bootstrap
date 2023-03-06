@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "precommit": "chmod +x .husky/*",
     "commit": "git-cz",
     "lint:eslint": "eslint \"src/**/*.{vue,ts,tsx}\" --fix",
     "format": "prettier --config ./.prettier/prettierrc-cli.js --write \"src/**/*.{ts,tsx,vue}\" \"test/**/*.{ts,tsx,vue}\""
@@ -12,8 +13,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "commitlint": { "extends": ["@commitlint/config-conventional"] },
-  "config": { "commitizen": { "path": "node_modules/cz-customizable" } },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
   "devDependencies": {
     "@commitlint/cli": "17.4.2",
     "@commitlint/config-conventional": "17.4.2",
