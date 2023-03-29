@@ -54,3 +54,10 @@ jobs:
       - name: Publish Package Major
         run: npm run publish:major
         if: ${{ startsWith(github.event.head_commit.message, '[release](major)') }}
+  sync:
+    runs-on: ubuntu-latest
+    needs: release
+    steps:
+      - name: Sync Package
+        run: |
+          curl -X PUT "https://registry-direct.npmmirror.com/@gopowerteam/bootstrap-cli/sync"
