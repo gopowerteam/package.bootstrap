@@ -32,6 +32,14 @@
     "prettier": "2.8.4",
     "husky": "8.0.2"
   },
-  "commitlint": { "extends": ["@commitlint/config-conventional"] },
-  "config": { "commitizen": { "path": "node_modules/cz-customizable" } }
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  }
 }
