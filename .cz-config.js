@@ -62,6 +62,4 @@ module.exports = {
   },
   skipEmptyScopes: true,
   skipQuestions: ['body', 'breaking', 'footer'],
-  typePrefix: '[',
-  typeSuffix: ']'
 }
