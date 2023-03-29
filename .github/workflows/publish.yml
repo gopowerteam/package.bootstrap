@@ -2,42 +2,25 @@ name: publish
 on:
   push:
     branches:
-      - release/patch
-      - release/minor
-      - release/major
-
+      - master
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
+    if: ${{ startsWith(github.event.head_commit.message, '[release]') }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Node.js
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ^7.0
+
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          version: 7
-          run_install: false
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install
@@ -62,12 +45,12 @@ jobs:
 
       - name: Publish Package Patch
         run: npm run publish:patch
-        if: ${{ github.ref_name == 'release/patch' }}
+        if: ${{ startsWith(github.event.head_commit.message, '[release](patch)') }}
 
       - name: Publish Package Minor
         run: npm run publish:minor
-        if: ${{ github.ref_name == 'release/minor' }}
+        if: ${{ startsWith(github.event.head_commit.message, '[release](minor)') }}
 
       - name: Publish Package Major
         run: npm run publish:major
-        if: ${{ github.ref_name == 'release/major' }}
+        if: ${{ startsWith(github.event.head_commit.message, '[release](major)') }}
