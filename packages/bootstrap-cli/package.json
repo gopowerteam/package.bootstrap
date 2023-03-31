@@ -12,7 +12,8 @@
   "files": [
     "dist",
     "templates",
-    "templates/npmrc/.npmrc"
+    "templates/npmrc/.npmrc",
+    "templates/husky/_/.gitignore"
   ],
   "bin": {
     "bootstrap": "./dist/index.js"

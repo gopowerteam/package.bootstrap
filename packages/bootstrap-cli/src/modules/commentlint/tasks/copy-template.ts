@@ -1,5 +1,5 @@
-import { copyTemplate } from "~/shared/template";
+import { copyTemplate } from '~/shared/template'
 
 export default function writeTemplateTask() {
-  copyTemplate("commentlint", [".cz-config.js"]);
+  copyTemplate('commentlint', ['.cz-config.js', 'commitlint.config.js'])
 }
