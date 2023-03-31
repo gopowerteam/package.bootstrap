@@ -4,7 +4,7 @@ export default function writeTemplateFiles(response: Record<string, any>) {
   if (response["commentlint"] || response["eslint"]) {
     copyTemplate("husky", [
       {
-        input: "_/.gitignore",
+        input: "_/_.gitignore",
         output: ".husky/_/.gitignore",
       },
       {
