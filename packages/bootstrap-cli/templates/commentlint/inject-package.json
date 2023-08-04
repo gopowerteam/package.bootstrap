@@ -2,9 +2,6 @@
   "scripts": {
     "commit": "git-cz"
   },
-  "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
-  },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-customizable"
